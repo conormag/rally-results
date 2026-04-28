@@ -11,6 +11,16 @@ export async function GET(
     // Example URL: https://results.shannonsportsit.ie/results.php?rally=MO26
     const url = `https://results.shannonsportsit.ie/results.php?rally=${rallyId}`;
 
+    // lets validate the rally code as 2 letters followed by 2 digits
+    // where digits are year between 2002 and current year and reject if not valid
+    // to avoid unnecessary requests to the target site
+    const currentYear = new Date().getFullYear();
+    console.log(`Validating rally ID: ${rallyId} against current year: ${currentYear}`);
+    const rallyCodeRegex = new RegExp(`^[A-Z]{2}(0[2-9]|1[0-9]|2[0-${currentYear % 100 % 10}])$`);
+    if (!rallyCodeRegex.test(rallyId)) {
+      return NextResponse.json({ error: 'Invalid rally ID format' }, { status: 400 });
+    }
+
     const { data: html } = await axios.get(url);
     const $ = cheerio.load(html);
 
@@ -69,10 +79,18 @@ export async function GET(
       }
     });
 
+    const mainResultsClassFilter: Set<string> = new Set(mainResults.map(r => r.eventClass));
+    const juniorResultsClassFilter: Set<string> = new Set(juniorResults.map(r =>r.eventClass));
+    const historicResultsClassFilter: Set<string> = new Set(historicResults.map(r =>r.eventClass));
+
+
     return NextResponse.json({
       mainResults,
       juniorResults,
       historicResults,
+      mainResultsClassFilter,
+      juniorResultsClassFilter,
+      historicResultsClassFilter,
     });
   } catch (error) {
     return NextResponse.json({ error: 'Failed to scrape data' }, { status: 500 });

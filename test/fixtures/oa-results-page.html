@@ -1,0 +1,936 @@
+<html lang="en">
+<script src="chrome-extension://lgmpcpglpngdoalbgeoldeajfclnhafa/aptosSDK.js"></script>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="rally.css?version=2">
+  <script src="rally.js"></script>
+
+
+  <title>Rally Results - Galway International Rally, 2026</title>
+</head>
+
+<body>
+  <div class="header">
+    <a href="https://www.motorsportireland.com" target="_blank">
+      <img class="milogo" src="images/MIlogo.svg" alt="Motorsport Ireland">
+    </a>
+    <h1>
+      Results for Galway International Rally, 2026</h1>
+  </div>
+
+  <h3>31st January to 1st February at Galway<br>
+    FINAL - Last updated: 17:58 on 1st February to FINISH<br>
+  </h3>
+  <form method="POST" action="results.php">
+    <select name="event" size="1">
+      <option selected="" value="--">All Categories</option>
+      <option value="MO">Main Field</option>
+      <option value="HI">Historic</option>
+      <option value="JU">Junior</option>
+    </select>
+    <input type="hidden" name="select" value="byposn">
+    <input type="hidden" name="class" value="">
+    <input type="hidden" name="stage" value="FI">
+    <input type="submit" name="action" value="Choose Category">
+  </form>
+
+  <table class="nob">
+    <tbody>
+      <tr class="nob">
+        <td class="nob">
+          <form method="POST" action="results.php">
+            <table class="nob">
+              <tbody>
+                <tr class="nob">
+                  <td class="nob"><input type="radio" name="select" value="byposn" checked=""></td>
+                  <td class="nob">All results, sorted by Overall Position</td>
+                </tr>
+                <tr>
+                  <td class="nob"><input type="radio" name="select" value="byclass"></td>
+                  <td class="nob">All results, sorted by Class and Position</td>
+                </tr>
+                <tr>
+                  <td class="nob"><input type="radio" name="select" value="bystage"></td>
+                  <td class="nob">All results, sorted by Stage Position</td>
+                </tr>
+                <tr>
+                  <td class="nob"><input type="radio" name="select" value="bystageclass"></td>
+                  <td class="nob">All results, sorted by Class and Stage Position</td>
+                </tr>
+                <tr class="nob">
+                  <td class="nob"><input type="radio" name="select" value="select"></td>
+                  <td class="nob">Results for
+                    <select name="class" size="1">
+                      <option value="10">Class 10</option>
+                      <option value="11F">Class 11F</option>
+                      <option value="11R">Class 11R</option>
+                      <option value="12">Class 12</option>
+                      <option value="13">Class 13</option>
+                      <option value="14">Class 14</option>
+                      <option value="16">Class 16</option>
+                      <option value="17">Class 17</option>
+                      <option value="18">Class 18</option>
+                      <option value="19">Class 19</option>
+                      <option value="20">Class 20</option>
+                      <option value="22">Class 22</option>
+                      <option value="24">Class 24</option>
+                      <option value="RC2">Class RC2</option>
+                      <option value="RC3">Class RC3</option>
+                      <option value="RC4">Class RC4</option>
+
+                    </select>only
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            Results to
+            <select name="stage" size="1">
+
+              <option value="1">Stage 1</option>
+              <option value="2">Stage 2</option>
+              <option value="3">Stage 3</option>
+              <option value="4">Stage 4</option>
+              <option value="5">Stage 5</option>
+              <option value="6">Stage 6</option>
+              <option value="7">Stage 7</option>
+              <option value="8">Stage 8</option>
+              <option value="9">Stage 9</option>
+              <option value="10">Stage 10</option>
+              <option value="11">Stage 11</option>
+              <option value="12">Stage 12</option>
+              <option value="13">Stage 13</option>
+              <option value="14">Stage 14</option>
+              <option value="15">Stage 15</option>
+              <option selected="" value="FI">Finish</option>
+
+            </select>
+            <input type="hidden" name="event" value="--">
+            <input type="submit" name="action" value="Show Me">
+          </form>
+          <a href="index.php">Back to Index</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <hr>
+  <h3>Click on Crew Name to see all available stage times and positions</h3>
+
+  <h3>Results for the Main Field category</h3>
+  <table class="results">
+    <tbody>
+      <tr>
+        <th>O/A</th>
+        <th>Car</th>
+        <th>Driver/Codriver</th>
+        <th>Make</th>
+        <th>Class</th>
+        <th>Pos</th>
+        <th>Total</th>
+        <th>Diff 1st</th>
+        <th>Diff Prev</th>
+      </tr>
+      <tr class="odd">
+        <td class="right">1</td>
+        <td class="right"> 1</td>
+        <td><span onclick="PopupCar('GY26','1');">Callum Devine/Noel O'Sullivan</span></td>
+        <td>Skoda Fabia RS Rally2</td>
+        <td class="right">RC2</td>
+        <td class="right">O/A</td>
+        <td class="right">1:45:24.7</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr class="even">
+        <td class="right">2</td>
+        <td class="right"> 2</td>
+        <td><span onclick="PopupCar('GY26','2');">Eddie Doherty/Tom Murphy</span></td>
+        <td>Skoda Fabia RS</td>
+        <td class="right">RC2</td>
+        <td class="right">O/A</td>
+        <td class="right">1:46:01.8</td>
+        <td class="right"> 0:37.1</td>
+        <td class="right"> 0:37.1</td>
+      </tr>
+      <tr class="odd">
+        <td class="right">3</td>
+        <td class="right"> 6</td>
+        <td><span onclick="PopupCar('GY26','6');">Josh Moffett/Andy Hayes</span></td>
+        <td>Toyota GR Yaris Rally2</td>
+        <td class="right">RC2</td>
+        <td class="right">O/A</td>
+        <td class="right">1:46:11.3</td>
+        <td class="right"> 0:46.6</td>
+        <td class="right"> 0:09.5</td>
+      </tr>
+      <tr class="even">
+        <td class="right">4</td>
+        <td class="right"> 8</td>
+        <td><span onclick="PopupCar('GY26','8');">David Kelly/Buckley Shane</span></td>
+        <td>Skoda Fabia RS Rally2</td>
+        <td class="right">RC2</td>
+        <td class="right">1</td>
+        <td class="right">1:46:16.7</td>
+        <td class="right"> 0:52.0</td>
+        <td class="right"> 0:05.4</td>
+      </tr>
+      <tr class="odd">
+        <td class="right">5</td>
+        <td class="right"> 7</td>
+        <td><span onclick="PopupCar('GY26','7');">Declan Boyle/Patrick Walsh</span></td>
+        <td>Skoda Fabia RS Rally2</td>
+        <td class="right">RC2</td>
+        <td class="right">2</td>
+        <td class="right">1:46:39.0</td>
+        <td class="right"> 1:14.3</td>
+        <td class="right"> 0:22.3</td>
+      </tr>
+      <tr class="even">
+        <td class="right">6</td>
+        <td class="right"> 9</td>
+        <td><span onclick="PopupCar('GY26','9');">Ryan Loughran/Dale McGettigan</span></td>
+        <td>Ford Fiesta R5 Rally 2</td>
+        <td class="right">RC2</td>
+        <td class="right">3</td>
+        <td class="right">1:47:34.2</td>
+        <td class="right"> 2:09.5</td>
+        <td class="right"> 0:55.2</td>
+      </tr>
+      <tr class="odd">
+        <td class="right">7</td>
+        <td class="right"> 17</td>
+        <td><span onclick="PopupCar('GY26','17');">Shane Quinn/Stephen Reynolds</span></td>
+        <td>Ford Fiesta Rally2</td>
+        <td class="right">RC2</td>
+        <td class="right">4</td>
+        <td class="right">1:47:56.7</td>
+        <td class="right"> 2:32.0</td>
+        <td class="right"> 0:22.5</td>
+      </tr>
+      <tr class="even">
+        <td class="right">8</td>
+        <td class="right"> 12</td>
+        <td><span onclick="PopupCar('GY26','12');">Keelan Grogan/Ayrton Sherlock</span></td>
+        <td>Ford Fiesta</td>
+        <td class="right">RC2</td>
+        <td class="right">5</td>
+        <td class="right">1:48:11.0</td>
+        <td class="right"> 2:46.3</td>
+        <td class="right"> 0:14.3</td>
+      </tr>
+      <tr class="odd">
+        <td class="right">9</td>
+        <td class="right"> 26</td>
+        <td><span onclick="PopupCar('GY26','26');">Sam Touzel/Max Freeman</span></td>
+        <td>Ford Fiesta</td>
+        <td class="right">RC2</td>
+        <td class="right">6</td>
+        <td class="right">1:48:30.4</td>
+        <td class="right"> 3:05.7</td>
+        <td class="right"> 0:19.4</td>
+      </tr>
+      <tr class="even">
+        <td class="right">10</td>
+        <td class="right"> 14</td>
+        <td><span onclick="PopupCar('GY26','14');">Gary Kiernan/John McGrath</span></td>
+        <td>Ford Fiesta</td>
+        <td class="right">RC2</td>
+        <td class="right">7</td>
+        <td class="right">1:49:24.0</td>
+        <td class="right"> 3:59.3</td>
+        <td class="right"> 0:53.6</td>
+      </tr>
+      <tr class="odd">
+        <td class="right">11</td>
+        <td class="right"> 25</td>
+        <td><span onclick="PopupCar('GY26','25');">John Warren/Ruthann O'Connor</span></td>
+        <td>Ford Fiesta Rally 2</td>
+        <td class="right">24</td>
+        <td class="right">1</td>
+        <td class="right">1:50:32.8</td>
+        <td class="right"> 5:08.1</td>
+        <td class="right"> 1:08.8</td>
+      </tr>
+      <tr class="even">
+        <td class="right">12</td>
+        <td class="right"> 5</td>
+        <td><span onclick="PopupCar('GY26','5');">Cathan McCourt/Barry McNulty</span></td>
+        <td>Skoda Fabia RS Rally2</td>
+        <td class="right">RC2</td>
+        <td class="right">8</td>
+        <td class="right">1:51:08.4</td>
+        <td class="right"> 5:43.7</td>
+        <td class="right"> 0:35.6</td>
+      </tr>
+      <tr class="odd">
+        <td class="right">13</td>
+        <td class="right"> 11</td>
+        <td><span onclick="PopupCar('GY26','11');">Matthew Boyle/Gary Byrne</span></td>
+        <td>Ford Fiesta</td>
+        <td class="right">RC2</td>
+        <td class="right">9</td>
+        <td class="right">1:52:14.2</td>
+        <td class="right"> 6:49.5</td>
+        <td class="right"> 1:05.8</td>
+      </tr>
+      <tr class="even">
+        <td class="right">14</td>
+        <td class="right"> 31</td>
+        <td><span onclick="PopupCar('GY26','31');">Cian Caldwell/Paul McPhillips</span></td>
+        <td>Ford Fiesta Rally3</td>
+        <td class="right">RC3</td>
+        <td class="right">1</td>
+        <td class="right">1:52:46.6</td>
+        <td class="right"> 7:21.9</td>
+        <td class="right"> 0:32.4</td>
+      </tr>
+      <tr class="odd">
+        <td class="right">15</td>
+        <td class="right"> 22</td>
+        <td><span onclick="PopupCar('GY26','22');">Michael Cahill/Killian McArdle</span></td>
+        <td>Ford Escort Mk2</td>
+        <td class="right">14</td>
+        <td class="right">1</td>
+        <td class="right">1:53:07.6</td>
+        <td class="right"> 7:42.9</td>
+        <td class="right"> 0:21.0</td>
+      </tr>
+      <tr class="even">
+        <td class="right">16</td>
+        <td class="right"> 29</td>
+        <td><span onclick="PopupCar('GY26','29');">Shane Maguire/Paul Maguire</span></td>
+        <td>Citroen C3 Rally 2</td>
+        <td class="right">24</td>
+        <td class="right">2</td>
+        <td class="right">1:53:21.3</td>
+        <td class="right"> 7:56.6</td>
+        <td class="right"> 0:13.7</td>
+      </tr>
+      <tr class="odd">
+        <td class="right">17</td>
+        <td class="right"> 32</td>
+        <td><span onclick="PopupCar('GY26','32');">Dean Raftery/Oisin Joyce</span></td>
+        <td>Ford Fiesta</td>
+        <td class="right">RC3</td>
+        <td class="right">2</td>
+        <td class="right">1:53:23.1</td>
+        <td class="right"> 7:58.4</td>
+        <td class="right"> 0:01.8</td>
+      </tr>
+      <tr class="even">
+        <td class="right">18</td>
+        <td class="right"> 50</td>
+        <td><span onclick="PopupCar('GY26','50');">JF Shovelin/Dylan Baskin</span></td>
+        <td>Ford Escort Mk2</td>
+        <td class="right">14</td>
+        <td class="right">2</td>
+        <td class="right">1:55:23.2</td>
+        <td class="right"> 9:58.5</td>
+        <td class="right"> 2:00.1</td>
+      </tr>
+      <tr class="odd">
+        <td class="right">19</td>
+        <td class="right"> 65</td>
+        <td><span onclick="PopupCar('GY26','65');">John McQuaid/Thomas Treanor</span></td>
+        <td>Ford Escort Mk2</td>
+        <td class="right">14</td>
+        <td class="right">3</td>
+        <td class="right">1:55:51.3</td>
+        <td class="right">10:26.6</td>
+        <td class="right"> 0:28.1</td>
+      </tr>
+      <tr class="even">
+        <td class="right">20</td>
+        <td class="right"> 64</td>
+        <td><span onclick="PopupCar('GY26','64');">James McCarville/Arthur Kierans</span></td>
+        <td>Ford Escort Mk2</td>
+        <td class="right">13</td>
+        <td class="right">1</td>
+        <td class="right">1:56:01.1</td>
+        <td class="right">10:36.4</td>
+        <td class="right"> 0:09.8</td>
+      </tr>
+      <tr class="odd">
+        <td class="right">21</td>
+        <td class="right"> 46</td>
+        <td><span onclick="PopupCar('GY26','46');">Martin McGee/Karl Reid</span></td>
+        <td>Ford Escort Mk2</td>
+        <td class="right">14</td>
+        <td class="right">4</td>
+        <td class="right">1:56:15.5</td>
+        <td class="right">10:50.8</td>
+        <td class="right"> 0:14.4</td>
+      </tr>
+      <tr class="even">
+        <td class="right">22</td>
+        <td class="right"> 34</td>
+        <td><span onclick="PopupCar('GY26','34');">Brian Bolger/James McEneaney</span></td>
+        <td>Ford Fiesta Rally2</td>
+        <td class="right">24</td>
+        <td class="right">3</td>
+        <td class="right">1:56:30.0</td>
+        <td class="right">11:05.3</td>
+        <td class="right"> 0:14.5</td>
+      </tr>
+      <tr class="odd">
+        <td class="right">23</td>
+        <td class="right"> 36</td>
+        <td><span onclick="PopupCar('GY26','36');">Tomas O'Rourke/Tomas Scallan</span></td>
+        <td>Mitsubishi Evo 10</td>
+        <td class="right">20</td>
+        <td class="right">1</td>
+        <td class="right">1:56:34.0</td>
+        <td class="right">11:09.3</td>
+        <td class="right"> 0:04.0</td>
+      </tr>
+      <tr class="even">
+        <td class="right">24</td>
+        <td class="right"> 72</td>
+        <td><span onclick="PopupCar('GY26','72');">PJ Jnr McDermott/Johnny Baird</span></td>
+        <td>Peugeot 208 Rally4</td>
+        <td class="right">RC4</td>
+        <td class="right">1</td>
+        <td class="right">1:57:43.7</td>
+        <td class="right">12:19.0</td>
+        <td class="right"> 1:09.7</td>
+      </tr>
+      <tr class="odd">
+        <td class="right">25</td>
+        <td class="right"> 55</td>
+        <td><span onclick="PopupCar('GY26','55');">Adrian Quinn/Des Sherlock</span></td>
+        <td>Renault Clio</td>
+        <td class="right">RC3</td>
+        <td class="right">3</td>
+        <td class="right">1:57:44.4</td>
+        <td class="right">12:19.7</td>
+        <td class="right"> 0:00.7</td>
+      </tr>
+      <tr class="even">
+        <td class="right">26</td>
+        <td class="right"> 63</td>
+        <td><span onclick="PopupCar('GY26','63');">Stephen Hernon/Ivan Hernon</span></td>
+        <td>Ford Fiesta Rally 3</td>
+        <td class="right">RC3</td>
+        <td class="right">4</td>
+        <td class="right">1:58:32.6</td>
+        <td class="right">13:07.9</td>
+        <td class="right"> 0:48.2</td>
+      </tr>
+      <tr class="odd">
+        <td class="right">27</td>
+        <td class="right"> 49</td>
+        <td><span onclick="PopupCar('GY26','49');">Mac Walsh/Cathair Hughes</span></td>
+        <td>Ford Escort</td>
+        <td class="right">13</td>
+        <td class="right">2</td>
+        <td class="right">1:58:38.0</td>
+        <td class="right">13:13.3</td>
+        <td class="right"> 0:05.4</td>
+      </tr>
+      <tr class="even">
+        <td class="right">28</td>
+        <td class="right"> 60</td>
+        <td><span onclick="PopupCar('GY26','60');">Jack Maguire/Keith McConnon</span></td>
+        <td>Honda Civic</td>
+        <td class="right">11F</td>
+        <td class="right">1</td>
+        <td class="right">1:58:54.9</td>
+        <td class="right">13:30.2</td>
+        <td class="right"> 0:16.9</td>
+      </tr>
+      <tr class="odd">
+        <td class="right">29</td>
+        <td class="right"> 56</td>
+        <td><span onclick="PopupCar('GY26','56');">Damien Connell/Gary McWalter</span></td>
+        <td>Honda Civic EK4</td>
+        <td class="right">11F</td>
+        <td class="right">2</td>
+        <td class="right">1:59:01.9</td>
+        <td class="right">13:37.2</td>
+        <td class="right"> 0:07.0</td>
+      </tr>
+      <tr class="even">
+        <td class="right">30</td>
+        <td class="right"> 66</td>
+        <td><span onclick="PopupCar('GY26','66');">Geoffrey Dolan/Connor Murphy</span></td>
+        <td>Talbot Lotus Sunbeam</td>
+        <td class="right">13</td>
+        <td class="right">3</td>
+        <td class="right">1:59:32.1</td>
+        <td class="right">14:07.4</td>
+        <td class="right"> 0:30.2</td>
+      </tr>
+      <tr class="odd">
+        <td class="right">31</td>
+        <td class="right"> 67</td>
+        <td><span onclick="PopupCar('GY26','67');">Gavin McGivney/Daniel McConnon</span></td>
+        <td>Ford Escort Mk2</td>
+        <td class="right">13</td>
+        <td class="right">4</td>
+        <td class="right">1:59:37.5</td>
+        <td class="right">14:12.8</td>
+        <td class="right"> 0:05.4</td>
+      </tr>
+      <tr class="even">
+        <td class="right">32</td>
+        <td class="right"> 57</td>
+        <td><span onclick="PopupCar('GY26','57');">Sean Cahill/Jamie Quinn</span></td>
+        <td>Proton Satria</td>
+        <td class="right">11F</td>
+        <td class="right">3</td>
+        <td class="right">2:00:33.4</td>
+        <td class="right">15:08.7</td>
+        <td class="right"> 0:55.9</td>
+      </tr>
+      <tr class="odd">
+        <td class="right">33</td>
+        <td class="right"> 54</td>
+        <td><span onclick="PopupCar('GY26','54');">Pat Kelly/Jonathan Kelly</span></td>
+        <td>Ford Fiesta</td>
+        <td class="right">24</td>
+        <td class="right">4</td>
+        <td class="right">2:00:34.2</td>
+        <td class="right">15:09.5</td>
+        <td class="right"> 0:00.8</td>
+      </tr>
+      <tr class="even">
+        <td class="right">34</td>
+        <td class="right"> 69</td>
+        <td><span onclick="PopupCar('GY26','69');">Darrel Quinn/Sean Devlin</span></td>
+        <td>Ford Escort</td>
+        <td class="right">12</td>
+        <td class="right">1</td>
+        <td class="right">2:01:54.9</td>
+        <td class="right">16:30.2</td>
+        <td class="right"> 1:20.7</td>
+      </tr>
+      <tr class="odd">
+        <td class="right">35</td>
+        <td class="right">100</td>
+        <td><span onclick="PopupCar('GY26','100');">Nigel Brennan/Mark Sheridan</span></td>
+        <td>Honda Civic</td>
+        <td class="right">11F</td>
+        <td class="right">4</td>
+        <td class="right">2:02:11.5</td>
+        <td class="right">16:46.8</td>
+        <td class="right"> 0:16.6</td>
+      </tr>
+      <tr class="even">
+        <td class="right">36</td>
+        <td class="right"> 79</td>
+        <td><span onclick="PopupCar('GY26','79');">Stephen Conn/Tadhg Delaney</span></td>
+        <td>BMW 1M</td>
+        <td class="right">14</td>
+        <td class="right">5</td>
+        <td class="right">2:02:40.8</td>
+        <td class="right">17:16.1</td>
+        <td class="right"> 0:29.3</td>
+      </tr>
+      <tr class="odd">
+        <td class="right">37</td>
+        <td class="right"> 84</td>
+        <td><span onclick="PopupCar('GY26','84');">Shane McCarthy/Brian Martyn</span></td>
+        <td>Honda Civic</td>
+        <td class="right">11F</td>
+        <td class="right">5</td>
+        <td class="right">2:02:56.9</td>
+        <td class="right">17:32.2</td>
+        <td class="right"> 0:16.1</td>
+      </tr>
+      <tr class="even">
+        <td class="right">38</td>
+        <td class="right"> 68</td>
+        <td><span onclick="PopupCar('GY26','68');">Gerard Browne/Keith Harris</span></td>
+        <td>Ford Escort</td>
+        <td class="right">14</td>
+        <td class="right">6</td>
+        <td class="right">2:02:59.7</td>
+        <td class="right">17:35.0</td>
+        <td class="right"> 0:02.8</td>
+      </tr>
+      <tr class="odd">
+        <td class="right">39</td>
+        <td class="right"> 90</td>
+        <td><span onclick="PopupCar('GY26','90');">Brendan Burke/Daniel Fahey</span></td>
+        <td>Honda Civic EK4</td>
+        <td class="right">11F</td>
+        <td class="right">6</td>
+        <td class="right">2:04:29.7</td>
+        <td class="right">19:05.0</td>
+        <td class="right"> 1:30.0</td>
+      </tr>
+      <tr class="even">
+        <td class="right">40</td>
+        <td class="right"> 96</td>
+        <td><span onclick="PopupCar('GY26','96');">Adrian Cannon/Liam Hibbitt</span></td>
+        <td>Ford Escort G3</td>
+        <td class="right">12</td>
+        <td class="right">2</td>
+        <td class="right">2:05:10.2</td>
+        <td class="right">19:45.5</td>
+        <td class="right"> 0:40.5</td>
+      </tr>
+      <tr class="odd">
+        <td class="right">41</td>
+        <td class="right"> 59</td>
+        <td><span onclick="PopupCar('GY26','59');">Barry O'Brien/Declan Buttimer</span></td>
+        <td>Honda Civic</td>
+        <td class="right">11F</td>
+        <td class="right">7</td>
+        <td class="right">2:07:11.8</td>
+        <td class="right">21:47.1</td>
+        <td class="right"> 2:01.6</td>
+      </tr>
+      <tr class="even">
+        <td class="right">42</td>
+        <td class="right"> 87</td>
+        <td><span onclick="PopupCar('GY26','87');">Eoin Cullinane/Darragh McElroy</span></td>
+        <td>Honda Civic EK4</td>
+        <td class="right">11F</td>
+        <td class="right">8</td>
+        <td class="right">2:07:12.3</td>
+        <td class="right">21:47.6</td>
+        <td class="right"> 0:00.5</td>
+      </tr>
+      <tr class="odd">
+        <td class="right">43</td>
+        <td class="right"> 88</td>
+        <td><span onclick="PopupCar('GY26','88');">David Herbert/Daniel Seaman</span></td>
+        <td>Peugeot 208 Rally 4</td>
+        <td class="right">RC4</td>
+        <td class="right">2</td>
+        <td class="right">2:07:27.9</td>
+        <td class="right">22:03.2</td>
+        <td class="right"> 0:15.6</td>
+      </tr>
+      <tr class="even">
+        <td class="right">44</td>
+        <td class="right"> 97</td>
+        <td><span onclick="PopupCar('GY26','97');">Gerard Tuite/Karl Egan</span></td>
+        <td>Ford Escort</td>
+        <td class="right">13</td>
+        <td class="right">5</td>
+        <td class="right">2:09:01.8</td>
+        <td class="right">23:37.1</td>
+        <td class="right"> 1:33.9</td>
+      </tr>
+      <tr class="odd">
+        <td class="right">45</td>
+        <td class="right"> 43R</td>
+        <td><span onclick="PopupCar('GY26','43');">Corey Eves/Michael White</span></td>
+        <td>Toyota Corolla</td>
+        <td class="right">13</td>
+        <td class="right">6</td>
+        <td class="right">2:09:03.3</td>
+        <td class="right">23:38.6</td>
+        <td class="right"> 0:01.5</td>
+      </tr>
+      <tr class="even">
+        <td class="right">46</td>
+        <td class="right"> 89</td>
+        <td><span onclick="PopupCar('GY26','89');">Paul McHugh/Katelyn McHugh</span></td>
+        <td>Honda Integra Type R</td>
+        <td class="right">22</td>
+        <td class="right">1</td>
+        <td class="right">2:09:15.0</td>
+        <td class="right">23:50.3</td>
+        <td class="right"> 0:11.7</td>
+      </tr>
+      <tr class="odd">
+        <td class="right">47</td>
+        <td class="right"> 95</td>
+        <td><span onclick="PopupCar('GY26','95');">Andrew Mackarel/Richard Cassidy</span></td>
+        <td>Opel Ascona</td>
+        <td class="right">13</td>
+        <td class="right">7</td>
+        <td class="right">2:09:35.6</td>
+        <td class="right">24:10.9</td>
+        <td class="right"> 0:20.6</td>
+      </tr>
+      <tr class="even">
+        <td class="right">48</td>
+        <td class="right"> 85</td>
+        <td><span onclick="PopupCar('GY26','85');">Cathal Keane/TJ Shiel</span></td>
+        <td>Honda Civic</td>
+        <td class="right">11F</td>
+        <td class="right">9</td>
+        <td class="right">2:09:38.4</td>
+        <td class="right">24:13.7</td>
+        <td class="right"> 0:02.8</td>
+      </tr>
+      <tr class="odd">
+        <td class="right">49</td>
+        <td class="right"> 93</td>
+        <td><span onclick="PopupCar('GY26','93');">Gerard Daly/Gavin Bird</span></td>
+        <td>Peugeot 106 Cup Car</td>
+        <td class="right">11F</td>
+        <td class="right">10</td>
+        <td class="right">2:10:35.3</td>
+        <td class="right">25:10.6</td>
+        <td class="right"> 0:56.9</td>
+      </tr>
+      <tr class="even">
+        <td class="right">50</td>
+        <td class="right"> 45R</td>
+        <td><span onclick="PopupCar('GY26','45');">Brian Lavelle/Gavin Doherty</span></td>
+        <td>Ford Escort Mk2</td>
+        <td class="right">14</td>
+        <td class="right">7</td>
+        <td class="right">2:12:05.3</td>
+        <td class="right">26:40.6</td>
+        <td class="right"> 1:30.0</td>
+      </tr>
+      <tr class="odd">
+        <td class="right">51</td>
+        <td class="right">102</td>
+        <td><span onclick="PopupCar('GY26','102');">Gerry McIntyre/Paul Clarke</span></td>
+        <td>Mitsubishi Evo 4</td>
+        <td class="right">20</td>
+        <td class="right">2</td>
+        <td class="right">2:13:12.7</td>
+        <td class="right">27:48.0</td>
+        <td class="right"> 1:07.4</td>
+      </tr>
+      <tr class="even">
+        <td class="right">52</td>
+        <td class="right"> 27R</td>
+        <td><span onclick="PopupCar('GY26','27');">Neil Roskell/Carl Williamson</span></td>
+        <td>Ford Fiesta Rally 2</td>
+        <td class="right">RC2</td>
+        <td class="right">10</td>
+        <td class="right">2:15:01.7</td>
+        <td class="right">29:37.0</td>
+        <td class="right"> 1:49.0</td>
+      </tr>
+      <tr class="odd">
+        <td class="right">53</td>
+        <td class="right">103</td>
+        <td><span onclick="PopupCar('GY26','103');">David O'Sullivan/Billy Riordan</span></td>
+        <td>Honda Civic EK4</td>
+        <td class="right">22</td>
+        <td class="right">2</td>
+        <td class="right">2:18:42.0</td>
+        <td class="right">33:17.3</td>
+        <td class="right"> 3:40.3</td>
+      </tr>
+      <tr class="even">
+        <td class="right">54</td>
+        <td class="right"> 52R</td>
+        <td><span onclick="PopupCar('GY26','52');">David Quigley/Enda O'Leary</span></td>
+        <td>Honda Civic</td>
+        <td class="right">11F</td>
+        <td class="right">11</td>
+        <td class="right">2:23:18.2</td>
+        <td class="right">37:53.5</td>
+        <td class="right"> 4:36.2</td>
+      </tr>
+      <tr class="odd">
+        <td class="right">55</td>
+        <td class="right">106R</td>
+        <td><span onclick="PopupCar('GY26','106');">Conor Lappin/Shane Maguire</span></td>
+        <td>Ford Escort Mk2</td>
+        <td class="right">11R</td>
+        <td class="right">1</td>
+        <td class="right">2:29:52.8</td>
+        <td class="right">44:28.1</td>
+        <td class="right"> 6:34.6</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3>Results for the Historic category</h3>
+  <table class="results">
+    <tbody>
+      <tr>
+        <th>O/A</th>
+        <th>Car</th>
+        <th>Driver/Codriver</th>
+        <th>Make</th>
+        <th>Class</th>
+        <th>Pos</th>
+        <th>Total</th>
+        <th>Diff 1st</th>
+        <th>Diff Prev</th>
+      </tr>
+      <tr class="odd">
+        <td class="right">1</td>
+        <td class="right"> 39</td>
+        <td><span onclick="PopupCar('GY26','39');">Jason McSweeney/Liam Brennan</span></td>
+        <td>Ford Escort WRC</td>
+        <td class="right">19</td>
+        <td class="right">1</td>
+        <td class="right">1:57:13.0</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr class="even">
+        <td class="right">2</td>
+        <td class="right"> 40</td>
+        <td><span onclick="PopupCar('GY26','40');">Ray Breen/Damien Morrissey</span></td>
+        <td>Subaru Legacy RS</td>
+        <td class="right">19</td>
+        <td class="right">2</td>
+        <td class="right">1:57:31.6</td>
+        <td class="right"> 0:18.6</td>
+        <td class="right"> 0:18.6</td>
+      </tr>
+      <tr class="odd">
+        <td class="right">3</td>
+        <td class="right"> 75</td>
+        <td><span onclick="PopupCar('GY26','75');">Ray Cunningham/Ross Forde</span></td>
+        <td>Morris Cooper S</td>
+        <td class="right">17</td>
+        <td class="right">1</td>
+        <td class="right">2:04:01.4</td>
+        <td class="right"> 6:48.4</td>
+        <td class="right"> 6:29.8</td>
+      </tr>
+      <tr class="even">
+        <td class="right">4</td>
+        <td class="right">104</td>
+        <td><span onclick="PopupCar('GY26','104');">Noel Doyne/Kevin Heffernan</span></td>
+        <td>Ford Escort</td>
+        <td class="right">18</td>
+        <td class="right">1</td>
+        <td class="right">2:06:00.9</td>
+        <td class="right"> 8:47.9</td>
+        <td class="right"> 1:59.5</td>
+      </tr>
+      <tr class="odd">
+        <td class="right">5</td>
+        <td class="right"> 77</td>
+        <td><span onclick="PopupCar('GY26','77');">Kai-dieter Koelle/Llion Williams</span></td>
+        <td>Porsche 911 Carrera</td>
+        <td class="right">19</td>
+        <td class="right">3</td>
+        <td class="right">2:07:55.9</td>
+        <td class="right">10:42.9</td>
+        <td class="right"> 1:55.0</td>
+      </tr>
+      <tr class="even">
+        <td class="right">6</td>
+        <td class="right">105</td>
+        <td><span onclick="PopupCar('GY26','105');">Charles Knifton/Stephen Gozzard</span></td>
+        <td>Peugeot 205 GTi</td>
+        <td class="right">17</td>
+        <td class="right">2</td>
+        <td class="right">2:12:37.2</td>
+        <td class="right">15:24.2</td>
+        <td class="right"> 4:41.3</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3>Results for the Junior category</h3>
+  <table class="results">
+    <tbody>
+      <tr>
+        <th>O/A</th>
+        <th>Car</th>
+        <th>Driver/Codriver</th>
+        <th>Make</th>
+        <th>Class</th>
+        <th>Pos</th>
+        <th>Total</th>
+        <th>Diff 1st</th>
+        <th>Diff Prev</th>
+      </tr>
+      <tr class="odd">
+        <td class="right">1</td>
+        <td class="right"> J4</td>
+        <td><span onclick="PopupCar('GY26','304');">Graham Roche/Trevor Roche</span></td>
+        <td>Honda Civic</td>
+        <td class="right">16</td>
+        <td class="right">1</td>
+        <td class="right">56:17.5</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr class="even">
+        <td class="right">2</td>
+        <td class="right"> J6</td>
+        <td><span onclick="PopupCar('GY26','306');">Patrick Doherty/Conal McNulty</span></td>
+        <td>Honda Civic</td>
+        <td class="right">16</td>
+        <td class="right">2</td>
+        <td class="right">56:39.3</td>
+        <td class="right"> 0:21.8</td>
+        <td class="right"> 0:21.8</td>
+      </tr>
+      <tr class="odd">
+        <td class="right">3</td>
+        <td class="right"> J3</td>
+        <td><span onclick="PopupCar('GY26','303');">Eoin Kelly/Darragh Kelly</span></td>
+        <td>Honda Civic</td>
+        <td class="right">16</td>
+        <td class="right">3</td>
+        <td class="right">56:41.5</td>
+        <td class="right"> 0:24.0</td>
+        <td class="right"> 0:02.2</td>
+      </tr>
+      <tr class="even">
+        <td class="right">4</td>
+        <td class="right"> J1</td>
+        <td><span onclick="PopupCar('GY26','301');">Jason Gorham/Liam Egan</span></td>
+        <td>Honda Civic</td>
+        <td class="right">16</td>
+        <td class="right">4</td>
+        <td class="right">56:48.7</td>
+        <td class="right"> 0:31.2</td>
+        <td class="right"> 0:07.2</td>
+      </tr>
+      <tr class="odd">
+        <td class="right">5</td>
+        <td class="right"> J7</td>
+        <td><span onclick="PopupCar('GY26','307');">Cian Hynes/Cathal Fallon</span></td>
+        <td>Honda Civic EK4</td>
+        <td class="right">16</td>
+        <td class="right">5</td>
+        <td class="right">57:04.1</td>
+        <td class="right"> 0:46.6</td>
+        <td class="right"> 0:15.4</td>
+      </tr>
+      <tr class="even">
+        <td class="right">6</td>
+        <td class="right">J10</td>
+        <td><span onclick="PopupCar('GY26','310');">Colin Maguire/Anthony McDonald</span></td>
+        <td>Honda Civic</td>
+        <td class="right">16</td>
+        <td class="right">6</td>
+        <td class="right">59:29.5</td>
+        <td class="right"> 3:12.0</td>
+        <td class="right"> 2:25.4</td>
+      </tr>
+      <tr class="odd">
+        <td class="right">7</td>
+        <td class="right"> J9</td>
+        <td><span onclick="PopupCar('GY26','309');">Eoghan O'Boyle/Michael O'Boyle</span></td>
+        <td>Peugeot 206 XSI</td>
+        <td class="right">16</td>
+        <td class="right">7</td>
+        <td class="right">1:04:50.7</td>
+        <td class="right"> 8:33.2</td>
+        <td class="right"> 5:21.2</td>
+      </tr>
+      <tr class="even">
+        <td class="right">8</td>
+        <td class="right"> J8R</td>
+        <td><span onclick="PopupCar('GY26','308');">Jamie Doherty/Eoghan Moore</span></td>
+        <td>Honda Civic EK4</td>
+        <td class="right">16</td>
+        <td class="right">8</td>
+        <td class="right">1:11:30.8</td>
+        <td class="right">15:13.3</td>
+        <td class="right"> 6:40.1</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <hr>
+  <a href="index.php">Back to Index</a>
+
+
+</body>
+<script src="chrome-extension://lgmpcpglpngdoalbgeoldeajfclnhafa/inpage.js"></script>
+
+</html>
