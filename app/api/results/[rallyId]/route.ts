@@ -4,10 +4,10 @@ import axios from 'axios';
 
 export async function GET(
   request: Request,
-  { params }: { params: { rallyId: string } }
+  { params }: { params: Promise<{ rallyId: string }> }
 ) {
   try {
-    const { rallyId } = params;
+    const { rallyId } = await params;
     // Example URL: https://results.shannonsportsit.ie/results.php?rally=MO26
     const url = `https://results.shannonsportsit.ie/results.php?rally=${rallyId}`;
 
@@ -15,7 +15,6 @@ export async function GET(
     // where digits are year between 2002 and current year and reject if not valid
     // to avoid unnecessary requests to the target site
     const currentYear = new Date().getFullYear();
-    console.log(`Validating rally ID: ${rallyId} against current year: ${currentYear}`);
     const rallyCodeRegex = new RegExp(`^[A-Z]{2}(0[2-9]|1[0-9]|2[0-${currentYear % 100 % 10}])$`);
     if (!rallyCodeRegex.test(rallyId)) {
       return NextResponse.json({ error: 'Invalid rally ID format' }, { status: 400 });
