@@ -1,8 +1,9 @@
 const CAR_IMAGES = {
   FORD_ESCORT_MK2: '/cars/ford-escort-mk2.webp',
   VW_POLO_GTI_R5: '/cars/VW-Polo-GTI-R5.webp',
-  HYUNDAI_I20_N: '/cars/hyundai-i20-n.webp',
-  // Your Default/Fallback Image
+  HYUNDAI_I20_N: '/cars/hyundai-i20.webp',
+  SKODA_FABIA_R5: '/cars/skoda-fabia-r5.webp',
+  FORD_FIESTA_R5: '/cars/ford-fiesta-r5.webp',
   DEFAULT: '/cars/default.webp'
 };
 
@@ -19,14 +20,26 @@ const carMatches: Record<string, string[]> = {
     'vw polo gti r5',
     'volkswagen polo r5',
     'vw polo r5',
-    'polo r5'
+    'polo r5',
+    'vw polo',
   ],
   [CAR_IMAGES.HYUNDAI_I20_N]: [
     'hyundai i20 n rally2',
     'hyundai i20 r5',
     'hyundai i20 rally2',
     'i20 rally2'
-  ]
+  ],
+  [CAR_IMAGES.SKODA_FABIA_R5]: [
+    'skoda fabia rs',
+    'skoda fabia rally2',
+    'skoda fabia rs rally2'
+  ],
+  [CAR_IMAGES.FORD_FIESTA_R5]: [
+    'ford fiesta r5',
+    'ford fiesta rally2',
+    'fiesta rally2',
+    'ford fiesta',
+  ],
 };
 
 /**
