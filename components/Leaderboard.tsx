@@ -2,6 +2,7 @@
 
 import { useQuery } from '@tanstack/react-query';
 import { motion, AnimatePresence } from 'framer-motion';
+import { getCarImageUrl } from '@/lib/carImageMap';
 
 export default function Leaderboard({ rallyId }: { rallyId: string }) {
   const { data, isLoading } = useQuery({
@@ -29,6 +30,8 @@ export default function Leaderboard({ rallyId }: { rallyId: string }) {
       <AnimatePresence>
         {data?.mainResults?.map((entry: any, index: number) => {
           const isLeader = index === 0;
+
+          const carImageUrl = getCarImageUrl(entry.make);
 
           return (
             <motion.div
@@ -61,8 +64,8 @@ export default function Leaderboard({ rallyId }: { rallyId: string }) {
               {/* Car Make */}
               <div className="col-span-2 text-sm font-medium text-slate-300">
                 <img
-                  src="/cars/ford-escort-mk2.webp" // Your transparent PNG path
-                  alt="Ford Escort Mk2 Profile"
+                  src={carImageUrl} // Your transparent PNG path
+                  alt={`${entry.make} Profile`}
                   className="h-14 w-auto object-contain" // Fixed height for scaling consistency
                 />
                 {entry.make}
