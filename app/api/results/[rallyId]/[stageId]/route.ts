@@ -66,7 +66,9 @@ export async function GET(
         const names = $(cols[2]).text().trim().split('/');
         // regex to split 1(+3) into 1 and +3
         // can also be 3(-1) or 2(=)
-        const posChangeMatch = $(cols[0]).text().trim().match(/(\d+)\s+(\(([-+=]\d+)\))?/);
+        // can also be just the pos with no change, like 5
+        const text = $(cols[0]).text().trim();
+        const posChangeMatch = text.match(/(\d+)\s*(\(([-+=]\d+)\))?/);
         const pos = posChangeMatch ? posChangeMatch[1] : '';
         const posChange = posChangeMatch && posChangeMatch[3] ? posChangeMatch[3] : '0';
         // convert posChange to a number for easier handling in the frontend

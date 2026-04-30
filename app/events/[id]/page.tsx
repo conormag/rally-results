@@ -23,7 +23,8 @@ export default function ResultsPage({
         ? `/api/results/${id}/${activeStage}`
         : `/api/results/${id}`;
       return fetch(url).then(res => res.json());
-    }
+    },
+    placeholderData: (prev) => prev,
   });
 
   return (
