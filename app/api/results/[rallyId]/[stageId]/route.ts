@@ -1,32 +1,52 @@
 import { NextResponse } from 'next/server';
-import * as cheerio from 'cheerio';
 import axios from 'axios';
+import * as cheerio from 'cheerio';
 import { validateRallyId } from '@/lib/scrapers';
+
 
 export async function GET(
   request: Request,
-  { params }: { params: Promise<{ rallyId: string }> }
+  { params }: { params: Promise<{ rallyId: string, stageId: string }> }
 ) {
+  const { rallyId, stageId } = await params;
+
+  if (!validateRallyId(rallyId)) {
+    return NextResponse.json({ error: 'Invalid rally ID format' }, { status: 400 });
+  }
+
   try {
-    const { rallyId } = await params;
-    // Example URL: https://results.shannonsportsit.ie/results.php?rally=MO26
-    const url = `https://results.shannonsportsit.ie/results.php?rally=${rallyId}`;
+    // 1. Prepare the Form Data
+    // We use URLSearchParams to format it as application/x-www-form-urlencoded
+    const formData = new URLSearchParams();
+    formData.append('stage', stageId);
+    formData.append('event', '--');
+    formData.append('select', 'byposn');
+    formData.append('submit', 'Show Me'); // Often required by legacy PHP scripts
 
-    if (!validateRallyId(rallyId)) {
-      return NextResponse.json({ error: 'Invalid rally ID format' }, { status: 400 });
-    }
+    // 2. Perform the POST request
+    const response = await axios.post(
+      `https://results.shannonsportsit.ie/results.php?rally=${rallyId}`,
+      formData.toString(),
+      {
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+      }
+    );
 
-    const { data: html } = await axios.get(url);
-    const $ = cheerio.load(html);
+    const $ = cheerio.load(response.data);
 
     type ResultRow = {
       pos: string;
+      posChange: string;
       carNo: string;
       driver: string;
       codriver: string;
       make: string;
       eventClass: string;
       classPos: string;
+      stageTime: string;
+      roadTime: string;
       totalTime: string;
       gapToLeader: string;
       gapToPrev: string;
@@ -41,20 +61,30 @@ export async function GET(
         if (index === 0) return; // Skip header row
 
         const cols = $(element).find('td');
-        if (cols.length < 9) return;
+        if (cols.length < 11) return;
 
         const names = $(cols[2]).text().trim().split('/');
+        // regex to split 1(+3) into 1 and +3
+        // can also be 3(-1) or 2(=)
+        const posChangeMatch = $(cols[0]).text().trim().match(/(\d+)\s+(\(([-+=]\d+)\))?/);
+        const pos = posChangeMatch ? posChangeMatch[1] : '';
+        const posChange = posChangeMatch && posChangeMatch[3] ? posChangeMatch[3] : '0';
+        // convert posChange to a number for easier handling in the frontend
+        const posChangeNum = parseInt(posChange, 10) || 0;
         target.push({
-          pos: $(cols[0]).text().trim(),
+          pos,
+          posChange: posChangeNum.toString(),
           carNo: $(cols[1]).text().trim(),
           driver: names[0]?.trim() || '',
           codriver: names[1]?.trim() || '',
           make: $(cols[3]).text().trim(),
           eventClass: $(cols[4]).text().trim(),
           classPos: $(cols[5]).text().trim(),
-          totalTime: $(cols[6]).text().trim(),
-          gapToLeader: $(cols[7]).text().trim(),
-          gapToPrev: $(cols[8]).text().trim(),
+          stageTime: $(cols[6]).text().trim(),
+          roadTime: $(cols[7]).text().trim(),
+          totalTime: $(cols[8]).text().trim(),
+          gapToLeader: $(cols[9]).text().trim(),
+          gapToPrev: $(cols[10]).text().trim(),
         });
       });
     };

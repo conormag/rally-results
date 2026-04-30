@@ -27,7 +27,7 @@ describe('Rally Results API Scraper', () => {
   it('correctly parses HTML into JSON results', async () => {
     // Mock the Next.js Request object
     const req = new Request('http://localhost:3000/api/results/MO26');
-    const params = { rallyId: 'MO26' };
+    const params = Promise.resolve({ rallyId: 'MO26' });
 
     const response = await GET(req, { params });
     const data = await response.json();
@@ -56,10 +56,20 @@ describe('Rally Results API Scraper', () => {
     );
 
     const req = new Request('http://localhost:3000/api/results/ZZ25');
-    const response = await GET(req, { params: { rallyId: 'ZZ25' } });
-
+    const params = Promise.resolve({ rallyId: 'MO26' });
+    const response = await GET(req, { params });
+    const data = await response.json();
     expect(response.status).toBe(500);
   });
 
 
+  it('returns correct number of stages', async () => {
+    const req = new Request('http://localhost:3000/api/results/MO26');
+    const params = Promise.resolve({ rallyId: 'MO26' });
+
+    const response = await GET(req, { params });
+    const data = await response.json();
+    expect(response.status).toBe(200);
+    expect(data.stages.length).toBe(16);
+  });
 });

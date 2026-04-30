@@ -1,18 +1,10 @@
 'use client';
 
-import { useQuery } from '@tanstack/react-query';
 import { motion, AnimatePresence } from 'framer-motion';
 import { getCarImageUrl } from '@/lib/carImageMap';
 
-export default function Leaderboard({ rallyId }: { rallyId: string }) {
-  const { data, isLoading } = useQuery({
-    queryKey: ['results', rallyId],
-    queryFn: async () => {
-      console.log(`Fetching results for rally ID: ${rallyId}`);
-      const res = await fetch(`/api/results/${rallyId}`);
-      return res.json();
-    },
-  });
+export default function Leaderboard({ results, isLoading }: { results: any, isLoading: boolean }) {
+
 
   if (isLoading) return <div className="text-white">Loading Leaderboard...</div>;
 
@@ -28,7 +20,7 @@ export default function Leaderboard({ rallyId }: { rallyId: string }) {
       </div>
 
       <AnimatePresence>
-        {data?.mainResults?.map((entry: any, index: number) => {
+        {results?.mainResults?.map((entry: any, index: number) => {
           const isLeader = index === 0;
 
           const carImageUrl = getCarImageUrl(entry.make);

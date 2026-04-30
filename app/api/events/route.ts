@@ -46,6 +46,7 @@ export async function GET(
       }
     });
 
+
     return NextResponse.json({ events, years });
   } catch (error) {
     console.error('Error fetching events:', error);
