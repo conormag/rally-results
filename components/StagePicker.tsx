@@ -1,4 +1,15 @@
-export default function StagePicker({ stages, currentStage, onSelect }) {
+type Stage = {
+  id: string;
+  name: string;
+};
+
+type StagePickerProps = {
+  stages?: Stage[];
+  currentStage: string | null;
+  onSelect: (stageId: string | null) => void;
+};
+
+export default function StagePicker({ stages, currentStage, onSelect }: StagePickerProps) {
   return (
     <div className="flex gap-3 max-w-5xl overflow-x-auto mb-8 pb-2 pl-10">
       <button
