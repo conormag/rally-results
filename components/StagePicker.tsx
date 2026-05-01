@@ -6,7 +6,7 @@ type Stage = {
 type StagePickerProps = {
   stages?: Stage[];
   currentStage: string | null;
-  onSelect: (stageId: string | null) => void;
+  onSelect: (stageId: string | null) => void;git ad
 };
 
 export default function StagePicker({ stages, currentStage, onSelect }: StagePickerProps) {
